@@ -1,11 +1,12 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="zh-cn">
     <head>
         <meta charset="utf8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="keywords" content="starry sky">
-        <meta name="description" content="the starry sky">
-        <title>旋转的星空(the starry sky)</title>
+        <meta name="keywords" content="子幽">
+        <meta name="description" content="点击任意位置进入子幽的博客｜不让自己失望的子幽">
+         <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/alist-org/logo@main/blog.png">
+        <title>子幽｜浮生若梦，为欢几何</title>
         <style>
             body {
                 margin: 0;
@@ -17,18 +18,21 @@
             line-height: 50px;
             letter-spacing: 5px;
             color: #377;
-            width: 300px;
+            width: 400px;
             top: 40%;
             left: 50%;
             margin-left: -200px;
             font-size: 30px;
             font-family:"楷体";
-        		}
+        	}
+
         </style>
     </head>
-    <body>
+    <body onclick="window.location.href='https://blog.liukuan.cc/'">
     		<h1></h1>
         <canvas id="canvas"></canvas>
+
+        <div id="oH"></div>
         <script>
             var doublePI = Math.PI * 2;
 
@@ -204,8 +208,9 @@
                 ctx.drawImage(starCanvas, 0, 0, starCanvas.width, starCanvas.height);*/
                 requestAnimationFrame(loop);
             }
-var oH=document.getElementsByTagName("h1")[0];
-            var arr=["这世间过于俗气","不像你一般","浩瀚星辰,温柔婉转"],
+
+            var oH=document.getElementsByTagName("h1")[0];
+            var arr=["这世间过于俗气","不像你一般","浩瀚星辰,温柔婉转","——点击跳转我的博客"],
                 index=0,
                 arrLen=arr.length,
                 strLen=arr[0].length;
@@ -218,6 +223,7 @@ var oH=document.getElementsByTagName("h1")[0];
                     str=str+arr[row]+"<br>";
                     row++;
                 }
+
                 oH.innerHTML=str+arr[index].substring(0,pos);
                 if(pos==strLen){
                     index++;
